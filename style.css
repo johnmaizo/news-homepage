@@ -1,0 +1,338 @@
+:root {
+    --Primary_400: hsl(35, 77%, 62%);
+    --Primary_500: hsl(5, 85%, 63%); 
+
+    --Neutral_400: hsl(36, 100%, 99%);
+    --Neutral_500: hsl(233, 8%, 79%);
+    --Neutral_600: hsl(236, 13%, 42%);
+    --Neutral_700: hsl(240, 100%, 5%);
+
+    --fs_regular: 0.938rem;
+    --fw_400: 400;
+    --fw_700: 700;
+    --fw_800: 800;
+
+    --Ako_gwapo: hsl(35, 77%, 62%);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+
+    min-height: 100vh;
+
+    display: grid;
+    place-content: center;
+}
+
+ul, li, a {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+p , span{
+    font-size: var(--fs_regular);
+    color: var(--Neutral_500);
+}
+
+.container {
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: 1.5em;
+}
+
+
+/* ! Start here */
+header {
+    padding-block: 2em;
+    
+}
+
+header .container {
+    position: relative;
+}
+
+@media (min-width: 43.75em) {
+    header .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header nav ul {
+        display: flex;
+        gap: 2em;
+    }    
+}
+
+header .logo_nav, header .logo_nav img {
+    display: block;
+    width: 65px;
+    height: 40px;
+}
+
+
+header nav ul li a {
+    color: var(--Neutral_600);
+    transition: 250ms ease;
+}
+
+header nav ul li a:is(:hover, :focus) {
+    color: var(--Primary_500);
+}
+
+
+.button_nav {
+    display: none;
+}
+
+/* Button & Nav*/
+@media (max-width: 43.75em) {
+    .button_nav {
+        display: block;
+        aspect-ratio: 1 / 1 ;
+        width: 3em;
+        border: 0;
+        cursor: pointer;
+        position: absolute;
+        right: 5%;
+        top: 0;
+        z-index: 2;
+
+        background: url("images/icon-menu.svg") no-repeat center;
+    }
+    
+    .button_nav[aria-expanded="true"] {
+        background: url("images/icon-menu-close.svg") no-repeat center;
+        top: 2em;
+        position: fixed;
+    } 
+    
+    .header_nav {
+        display: none;
+        position: fixed;
+        background-color: var(--Neutral_400);
+        right: 0;
+        z-index: 1;
+        top: -1em;
+        text-align: start;
+        width: 15em;
+        height: 110vh;
+    }
+    
+    .header_nav[data-visible] {
+        display: block;
+    }
+
+    .header_nav ul {
+        margin-block-start: 10em;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+    }
+
+    .header_nav ul li a {
+        font-size: 1.2rem;
+        color: var(--Neutral_700);
+    }
+
+    .primary_header[data-overlay]::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: linear-gradient(rgba(28, 33, 51, 0.508), rgba(22, 22, 39, 0.64));
+        z-index: 1;
+      }
+}
+
+/* Header Module */
+
+.header_module h1 {
+    font-weight: var(--fw_800);
+    font-size: 4rem;
+    max-width: 6.5em;
+    line-height: 1;
+}
+
+.header_module p {
+    color: var(--Neutral_600);
+}
+
+.header_module .read_more {
+    text-transform: uppercase;
+    color: var(--Neutral_400);
+    background-color: var(--Primary_500);
+    font-weight: var(--fw_700);
+    display: block;
+    line-height: 3.2em;
+    text-align: center;
+    letter-spacing: 5px;
+    max-width: 12em;
+
+    transition: 250ms ease;
+}
+
+.header_module .read_more:is(:hover, :focus) {
+    background-color: var(--Neutral_700);
+}
+
+.header_module .grid_wrapper div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 28em;
+    margin-inline-start: 2em;
+}
+
+.header_module .grid_wrapper div:nth-child(2) p {
+    font-size: 1.2rem;
+}
+
+/* New Module */
+
+.new_module {
+    background-color: var(--Neutral_700);
+    padding: 1em;
+}
+
+.new_module h2 {
+    color: var(--Primary_400);
+    font-size: 2rem;
+    margin-block-end: 0.7em;
+}
+
+.new_module a {
+    color: var(--Neutral_400);
+    font-size: 1.3rem;
+    font-weight: var(--fw_700);
+    transition: 250ms ease;
+}
+
+.new_module a:is(:hover, :focus) {
+    color: var(--Primary_400);
+}
+
+.new_module p {
+    line-height: 1.7;
+    margin-block: 1em;
+}
+
+.new_module hr {
+    margin-block: 1.5em;
+}
+
+/* List Module */
+
+.list_module, .list_module ul {
+    margin: 0;
+    padding: 0;
+    margin-block: 2em;
+}
+
+.list_module ul li img {
+    aspect-ratio: 1 / 1.25;
+    width: 12.5em;
+    object-fit: cover;
+}
+
+.list_module ul li:nth-child(2) img {
+    width: 10em;
+}
+
+.list_module ul li:nth-child(3) img {
+    width: 11.25em;
+}
+
+.list_module ul li {
+    display: flex;
+    gap: 1.5em;
+}
+
+.list_module ul li h3 {
+    font-size: 1em;
+}
+
+.list_module ul {
+    display: grid;
+    gap: 2em;
+}
+
+.list_module ul li h3 {
+    color: var(--Neutral_700);
+    cursor: pointer;
+    transition: 250ms ease;
+}
+
+.list_module ul li h3:is(:hover, :focus) {
+    color: var(--Primary_500);
+}
+
+.list_module ul li span {
+    font-size: 2rem;
+    font-weight: var(--fw_700);
+}
+
+.list_module ul li div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Utility */
+
+.grid_wrapper {
+    display: grid;
+    grid-template-columns: 3.1fr 1fr;
+    gap: 2em;
+}
+
+.header_module .grid_wrapper {
+    margin-block-start: 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;   
+}
+
+.list_module ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+@media (max-width: 43.75em) {
+    .grid_wrapper {
+        grid-template-columns: none;
+    }
+
+    .header_module .grid_wrapper {
+        grid-template-columns: none;
+        gap: 0;
+    }
+    
+    .list_module ul {
+        grid-template-columns: none;
+    }
+
+    .header_module .grid_wrapper div:nth-child(2) {
+        display: grid;
+        max-width: 100%;
+        /* justify-content: center; */
+        margin-inline-start: 0;
+    }
+
+    .header_module h1 {
+        font-size: 3rem;
+        max-width: 100%;
+        margin-block-end: 0.5em;
+    }
+
+    .header_module .grid_wrapper div:nth-child(2) p {
+        margin-block-end: 1.2em;
+    }
+
+    .header_module .read_more {
+        margin-block-end: 2em;
+    }
+}
+
+footer {
+    text-align: center;
+}
