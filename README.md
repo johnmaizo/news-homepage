@@ -25,7 +25,7 @@ This is a solution to the [News homepage challenge on Frontend Mentor](https://w
 
 <h2 align="center">Links</h2>
 
-- Solution URL: [Clipboard landing page using HTML and CSS | Frontend Mentor](https://www.frontendmentor.io/solutions/clipboard-landing-page-x65sxK2t1i)
+- Solution URL: [News homepage using HTML and CSS | Frontend Mentor](https://www.frontendmentor.io/solutions/news-homepage-0b9XGm03AK)
 - Live Site URL: [https://news-homepage-johnmaizo.netlify.app/](https://news-homepage-johnmaizo.netlify.app/)
 
 <br>
